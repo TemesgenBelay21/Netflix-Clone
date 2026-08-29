@@ -6,7 +6,6 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  backdrop-filter: blur(8px);
   transition: background 0.3s ease;
 }
 
