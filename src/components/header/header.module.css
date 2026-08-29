@@ -59,6 +59,76 @@
   gap: 16px;
 }
 
+.searchField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchInput {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: #f5f5f1;
+  font-size: 14px;
+  outline: none;
+  transition: width 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.searchInputOpen {
+  width: 220px;
+  opacity: 1;
+  padding: 6px 10px;
+}
+
+.searchInput:focus {
+  border-color: #fff;
+}
+
+.profile {
+  position: relative;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.dropdownPanel {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 12px;
+  min-width: 200px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 0;
+  list-style: none;
+  z-index: 1001;
+}
+
+.dropdownPanel li a {
+  display: block;
+  padding: 8px 16px;
+  color: #f5f5f1;
+  text-decoration: none;
+  font-size: 13px;
+  transition: background 0.2s ease, text-decoration 0.2s ease;
+}
+
+.dropdownPanel li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
+}
+
+.dropdownPanel .signOut {
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 8px;
+}
+
 .iconButton {
   position: relative;
   display: flex;
