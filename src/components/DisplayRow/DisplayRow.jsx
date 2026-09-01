@@ -1,12 +1,11 @@
 import React from 'react'
 import styles from "./DisplayRow.module.css"
 import SlideShow from '../SlideShow/SlideShow'
-import { movies } from "../../Data/Data"
 
-function DisplayRow() {
+function DisplayRow({ title, movies, isFirst }) {
   return (
-    <div className={styles.row}>
-      <SlideShow title="movie suggestion" movies={movies} />
+    <div className={`${styles.row} ${isFirst ? styles.firstRow : ''}`}>
+      <SlideShow title={title} movies={movies} />
     </div>
   )
 }
