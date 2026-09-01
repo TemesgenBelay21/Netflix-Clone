@@ -9,12 +9,11 @@ import hoppers from '../assets/image/hoppers.webp'
 import marshals from '../assets/image/marshals.webp'
 import monarch from '../assets/image/monarchLegacyOfMonsters.webp'
 import pursuit from '../assets/image/pursuitOfJade.webp'
-import scream from '../assets/image/pursuitOfJade.webp'
 import TheBride from '../assets/image/TheBride.webp'
 import Vladimir from '../assets/image/vladimir.webp'
 import YoungSherlock from '../assets/image/youngSherlock.webp'
 
-export const movies = [
+const allMovies = [
   {
     id: 1,
     title: "Monarch",
@@ -95,7 +94,7 @@ export const movies = [
     genres: ["Adventure", "Fantasy"],
     badge: "Recently added"
   },
-   {
+  {
     id: 9,
     title: "Marshals",
     poster_path: marshals,
@@ -105,6 +104,91 @@ export const movies = [
     genres: ["Adventure", "Fantasy"],
     badge: "Recently added"
   },
+  {
+    id: 10,
+    title: "Hoppers",
+    poster_path: hoppers,
+    matureRating: "U/A 13+",
+    category: "Movie",
+    quality: "HD",
+    genres: ["Comedy", "Adventure"],
+    badge: "Recently added"
+  },
+  {
+    id: 11,
+    title: "The Bride",
+    poster_path: TheBride,
+    matureRating: "U/A 16+",
+    category: "Movie",
+    quality: "HD",
+    genres: ["Horror", "Thriller"],
+    badge: "New"
+  },
+  {
+    id: 12,
+    title: "Vladimir",
+    poster_path: Vladimir,
+    matureRating: "U/A 16+",
+    category: "Movie",
+    quality: "HD",
+    genres: ["Drama", "Action"],
+    badge: "New"
+  },
+  {
+    id: 13,
+    title: "Young Sherlock",
+    poster_path: YoungSherlock,
+    matureRating: "U/A 13+",
+    category: "Series",
+    quality: "HD",
+    genres: ["Mystery", "Adventure"],
+    badge: "New"
+  },
+  {
+    id: 14,
+    title: "Pursuit of Jade",
+    poster_path: pursuit,
+    matureRating: "U/A 16+",
+    category: "Movie",
+    quality: "HD",
+    genres: ["Drama", "Romance"],
+    badge: "Trending"
+  },
+]
 
-  
-];
+export const trendingNow = allMovies
+
+export const actionAndAdventure = [
+  allMovies[0],
+  allMovies[2],
+  allMovies[4],
+  allMovies[5],
+  allMovies[8],
+  allMovies[11],
+]
+
+export const newReleases = [
+  allMovies[6],
+  allMovies[7],
+  allMovies[8],
+  allMovies[9],
+  allMovies[10],
+  allMovies[12],
+]
+
+export const continueWatching = [
+  allMovies[1],
+  allMovies[3],
+  allMovies[13],
+  allMovies[0],
+  allMovies[5],
+]
+
+export const netflixOriginals = [
+  allMovies[0],
+  allMovies[5],
+  allMovies[6],
+  allMovies[10],
+  allMovies[11],
+  allMovies[12],
+]
