@@ -1,0 +1,30 @@
+.container {
+    padding: 20px clamp(16px, 4vw, 60px);
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #e5e5e5;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.3px;
+}
+
+.cardRow {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    padding-bottom: 40px;
+}
+
+.cardRow::-webkit-scrollbar {
+    display: none;
+}
+
+.cardRow {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
