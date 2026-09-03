@@ -1,23 +1,28 @@
 .title {
   color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 24px 0 8px;
 }
 
 /* Make wrapper stable */
 .Row {
   position: relative;
+  overflow: visible;
 }
 
 /* Swiper container */
 .Row :global(.swiper) {
-  height: 265px;
-  padding: 0 50px; 
+  height: 128px;
+  padding: 0 50px;
+  overflow: visible;
 }
 
-/* Slides */
+/* Slides aligned to fit posters tightly */
 .Row :global(.swiper-slide) {
   display: flex;
   align-items: center;
-  height: 100%; /* remove 130% */
+  height: 100%;
 }
 
 /* Navigation buttons base style */
