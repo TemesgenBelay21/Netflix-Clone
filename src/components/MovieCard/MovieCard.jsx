@@ -6,41 +6,69 @@ import { GoCheckCircleFill } from "react-icons/go";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 function MovieCard({ movie }) {
+  const genres = movie?.genres || [];
   return (
-    <div className={styles.cardWrapper}>
-      <img className={styles.poster} src={movie.poster_path} alt={movie.title} />
+    <div className={styles.cardwrapper}>
+      {/* poster image */}
+      <img
+        className={styles.poster}
+        src={movie?.poster_path}
+        alt={movie?.title}
+      />
 
+      {/* hover card */}
       <div className={styles.hoverCard}>
-        <img className={styles.hoverPoster} src={movie.poster_path} alt={movie.title} />
-        {movie.badge && <div className={styles.badge}>{movie.badge}</div>}
+        {/* img */}
+        <img
+          className={styles.hoverImage}
+          src={movie?.poster_path}
+          alt={movie?.title}
+        />
+        {/* badge */}
+        <div className={styles.badge}>{movie?.badge}</div>
 
-        <div className={styles.buttonRow}>
-          <span className={styles.circleButtonSmall}>
-            <FaCirclePlay color="white" size={18} />
-          </span>
-          <span className={styles.circleButtonSmall}>
-            <BsPlusCircle color="white" size={18} />
-          </span>
-          <span className={styles.circleButtonSmall}>
-            <GoCheckCircleFill color="white" size={18} />
-          </span>
-          <span className={styles.circleButtonSmall}>
-            <IoIosArrowDropdownCircle color="white" size={18} />
-          </span>
+        {/* button row */}
+        <div className={styles.buttonsRow}>
+          <FaCirclePlay
+            className={styles.circleButton}
+            color="white"
+            size={40}
+          />
+          <BsPlusCircle
+            className={styles.circleButton}
+            color="white"
+            size={40}
+          />
+          <GoCheckCircleFill
+            className={styles.circleButton}
+            color="white"
+            size={40}
+          />
+          <IoIosArrowDropdownCircle
+            className={styles.circleButtonSmall}
+            color="white"
+            size={40}
+          />
         </div>
+
+        {/* meta data row */}
         <div className={styles.metaRow}>
-          <span>{movie.matureRating}</span>
-          <span>{movie.category}</span>
-          <span>{movie.quality}</span>
+          <span className={styles.tag}>{movie?.matureRating}</span>
+          <span className={styles.tag}>{movie?.category}</span>
+          <span className={styles.tag}>{movie?.quality}</span>
         </div>
-
-        <div className={styles.genreRow}>
-          {movie.genres.map((genre, index) => (
-            <span key={index}>
-              {genre}
-              {index < movie.genres.length - 1 && <span>.</span>}
-            </span>
-          ))}
+        {/* genres */}
+        <div className={styles.genres}>
+          {genres?.map((g, index) => {
+            return (
+              <span key={index}>
+                {g}
+                {index < genres.length - 1 && (
+                  <span className={styles.dot}>•</span>
+                )}
+              </span>
+            );
+          })}
         </div>
       </div>
     </div>
