@@ -7,7 +7,7 @@ function Banner() {
     <div className={styles.banner}>
       <div className={styles.contents}>
         <img className={styles.showLogo} src={bannerLogo} alt="Netflix" />
-        <h1 className={styles.title}>BirdGerton</h1>
+        <h1 className={styles.title}>Bridgerton</h1>
         <p className={styles.description}>
           Shondaland's Emmy-winning series brings Julia T to life, as eight
           siblings seek their perfect match amid London's scandals.
