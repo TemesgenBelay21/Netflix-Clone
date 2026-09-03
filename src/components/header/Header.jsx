@@ -8,9 +8,9 @@ function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const searchRef = useRef(null);
-  const profileRef = useRef(null);
-  const searchInputRef = useRef(null);
+  const searchRef = useRef(/** @type {HTMLDivElement | null} */ (null));
+  const profileRef = useRef(/** @type {HTMLDivElement | null} */ (null));
+  const searchInputRef = useRef(/** @type {HTMLInputElement | null} */ (null));
 
   useEffect(() => {
     if (isSearchOpen && searchInputRef.current) {
@@ -26,14 +26,16 @@ function Header() {
   }, []);
 
   useEffect(() => {
+    /** @param {MouseEvent} e */
     function handleClickOutside(e) {
-      if (searchRef.current && !searchRef.current.contains(e.target)) {
+      if (searchRef.current && !searchRef.current.contains(/** @type {Node} */ (e.target))) {
         setIsSearchOpen(false);
       }
-      if (profileRef.current && !profileRef.current.contains(e.target)) {
+      if (profileRef.current && !profileRef.current.contains(/** @type {Node} */ (e.target))) {
         setIsProfileOpen(false);
       }
     }
+    /** @param {KeyboardEvent} e */
     function handleKeydown(e) {
       if (e.key === "Escape") {
         setIsSearchOpen(false);
