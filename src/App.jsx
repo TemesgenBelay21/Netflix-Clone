@@ -1,6 +1,7 @@
 import Header from "./components/header/Header";
 import Banner from "./components/Banner/Banner";
 import DisplayRow from "./components/DisplayRow/DisplayRow";
+import { Routes, Route } from "react-router-dom";
 import {
   trendingNow,
   actionAndAdventure,
@@ -9,16 +10,27 @@ import {
   netflixOriginals,
 } from "./Data/Data";
 
-function App() {
+function Home() {
   return (
     <>
-      <Header />
       <Banner />
-      <DisplayRow title="Trending Now" movies={trendingNow} isFirst />
+      <DisplayRow title="Trending Now" movies={trendingNow} />
       <DisplayRow title="Action & Adventure" movies={actionAndAdventure} />
       <DisplayRow title="New Releases" movies={newReleases} />
       <DisplayRow title="Continue Watching" movies={continueWatching} />
       <DisplayRow title="Netflix Originals" movies={netflixOriginals} />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
     </>
   );
 }
