@@ -1,13 +1,11 @@
-import React from 'react'
-import styles from "./DisplayRow.module.css"
-import SlideShow from '../SlideShow/SlideShow'
+import styles from "./DisplayRow.module.css";
+import SlideShow from "../SlideShow/SlideShow";
 
-function DisplayRow({ title, movies, isFirst }) {
+function DisplayRow({ title, movies }) {
   return (
-    <div className={`${styles.row} ${isFirst ? styles.firstRow : ''}`}>
+    <div className={styles.mainWrapper}>
       <SlideShow title={title} movies={movies} />
     </div>
-  )
+  );
 }
-
-export default DisplayRow
+export default DisplayRow;
