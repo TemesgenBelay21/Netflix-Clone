@@ -1,10 +1,13 @@
-import React from "react";
 import styles from "./MovieCard.module.css";
 import { FaCirclePlay } from "react-icons/fa6";
 import { BsPlusCircle } from "react-icons/bs";
 import { GoCheckCircleFill } from "react-icons/go";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
+/**
+ * A movie card with a hover-to-expand overlay.
+ * @param {{ movie: import("../../Data/Data.js").Movie }} props
+ */
 function MovieCard({ movie }) {
   const genres = movie?.genres || [];
   return (
