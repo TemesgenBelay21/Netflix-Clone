@@ -13,6 +13,19 @@ import TheBride from '../assets/image/TheBride.webp'
 import Vladimir from '../assets/image/vladimir.webp'
 import YoungSherlock from '../assets/image/youngSherlock.webp'
 
+/**
+ * A movie/show card item.
+ * @typedef {Object} Movie
+ * @property {number} id
+ * @property {string} title
+ * @property {string} poster_path
+ * @property {string} matureRating
+ * @property {string} category
+ * @property {string} quality
+ * @property {string[]} genres
+ * @property {string} [badge]
+ */
+
 const allMovies = [
   {
     id: 1,
