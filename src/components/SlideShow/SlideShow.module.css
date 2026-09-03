@@ -16,13 +16,17 @@
   height: 128px;
   padding: 0 50px;
   overflow: visible;
+  width: 100%;
 }
 
 /* Slides aligned to fit posters tightly */
 .Row :global(.swiper-slide) {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
+  width: 227px;
+  flex-shrink: 0;
 }
 
 /* Navigation buttons base style */
