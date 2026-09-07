@@ -1,4 +1,10 @@
-.mainWrapper{
-     padding-left: 2%;
-     background-color: #111;
+.mainWrapper {
+  position: relative;
+  margin-bottom: -150px;
+}
+
+/* Raise the hovered row so its expanding cards layer
+   over the rows above and below. */
+.mainWrapper:hover {
+  z-index: 20;
 }
