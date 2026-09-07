@@ -13,13 +13,13 @@
 
 .card:hover {
   z-index: 1000;
+  transform: scale(1.15);
   box-shadow:
     0 0 0 2px rgba(255, 255, 255, 0.18),
     0 18px 40px rgba(0, 0, 0, 0.7);
 }
 
 .card:hover .posterWrap {
-  transform: scale(1.05);
   border-radius: 4px 4px 0 0;
 }
 
@@ -30,8 +30,6 @@
   border-radius: 4px;
   overflow: hidden;
   background: #0f0f0f;
-  transform-origin: center;
-  transition: transform 0.65s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .poster {
@@ -86,7 +84,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 10px 0;
+  padding: 8px 8px 0;
 }
 
 .roundBtn {
@@ -127,8 +125,8 @@
 }
 
 .title {
-  margin: 8px 10px 3px;
-  font-size: 14px;
+  margin: 6px 8px 2px;
+  font-size: 13px;
   font-weight: 600;
   color: #fff;
   white-space: nowrap;
@@ -139,8 +137,8 @@
 .metaRow {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 0 10px;
+  gap: 6px;
+  padding: 0 8px;
   color: #ddd;
 }
 
@@ -159,9 +157,9 @@
 }
 
 .genres {
-  margin: 6px 10px 12px;
+  margin: 4px 8px 8px;
   color: #aaa;
-  font-size: 12px;
+  font-size: 11px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
