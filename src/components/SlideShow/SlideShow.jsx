@@ -3,7 +3,7 @@ import styles from "./SlideShow.module.css";
 import MovieCard from "../MovieCard/MovieCard";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const CARD_WIDTH = 190;
+const CARD_WIDTH = 300;
 const GAP = 6;
 const STEP = CARD_WIDTH + GAP;
 
