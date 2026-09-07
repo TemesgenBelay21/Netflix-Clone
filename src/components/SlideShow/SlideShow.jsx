@@ -22,6 +22,7 @@ function SlideShow({ title, movies }) {
   const [page, setPage] = useState(STEP * 6);
   const [maxOffset, setMaxOffset] = useState(0);
   const [dragging, setDragging] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const count = Array.isArray(movies) ? movies.length : 0;
 
@@ -122,7 +123,14 @@ function SlideShow({ title, movies }) {
           style={{ transform: `translateX(-${offset}px)` }}
         >
           {movies?.map((movie, index) => (
-            <MovieCard key={`${movie.id}-${index}`} movie={movie} />
+            <MovieCard
+              key={`${movie.id}-${index}`}
+              movie={movie}
+              index={index}
+              hoveredIndex={hoveredIndex}
+              onHoverStart={() => setHoveredIndex(index)}
+              onHoverEnd={() => setHoveredIndex(null)}
+            />
           ))}
         </div>
 
