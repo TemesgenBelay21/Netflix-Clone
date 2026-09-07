@@ -21,7 +21,8 @@
    vertical room used by the hovered card's info panel. */
 .viewport {
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   padding: 0 4% 160px;
   touch-action: pan-y;
   user-select: none;
