@@ -3,64 +3,88 @@ import { BsPlayFill, BsPlusLg } from "react-icons/bs";
 import { IoIosThumbsUp, IoIosArrowDown } from "react-icons/io";
 
 /**
- * A Netflix-style portrait card. Hovering expands the card and
- * drops an info panel below the poster with actions and metadata.
- * @param {{ movie: import("../../Data/Data.js").Movie }} props
+ * A Netflix-style landscape card. Hovering scales the card up from
+ * its own center and drops an info panel below with actions/metadata.
+ * The card lives inside a fixed-size slot so neighbors can shift
+ * out of the way on hover without resizing the row layout.
+ * @param {{
+ *   movie: import("../../Data/Data.js").Movie,
+ *   index?: number,
+ *   hoveredIndex?: number | null,
+ *   onHoverStart?: () => void,
+ *   onHoverEnd?: () => void,
+ * }} props
  */
-function MovieCard({ movie }) {
+function MovieCard({ movie, index = 0, hoveredIndex = null, onHoverStart, onHoverEnd }) {
   const genres = movie?.genres || [];
+  const shiftLeft = index === hoveredIndex - 1;
+  const shiftRight = index === hoveredIndex + 1;
+  const slotClasses = [
+    styles.cardSlot,
+    hoveredIndex === index ? styles.cardSlotHovered : "",
+    shiftLeft ? styles.slotShiftLeft : "",
+    shiftRight ? styles.slotShiftRight : "",
+  ]
+    .join(" ")
+    .trim();
 
   return (
-    <div className={styles.card}>
-      <div className={styles.posterWrap}>
-        <img
-          className={styles.poster}
-          src={movie?.poster_path}
-          alt={movie?.title}
-          draggable={false}
-        />
-        {movie?.badge && <span className={styles.badge}>{movie.badge}</span>}
-      </div>
-
-      <div className={styles.info}>
-        <div className={styles.buttonsRow}>
-          <button
-            type="button"
-            aria-label="Play"
-            className={`${styles.roundBtn} ${styles.playBtn}`}
-          >
-            <BsPlayFill />
-          </button>
-          <button type="button" aria-label="Add to My List" className={styles.roundBtn}>
-            <BsPlusLg />
-          </button>
-          <button type="button" aria-label="Like" className={styles.roundBtn}>
-            <IoIosThumbsUp />
-          </button>
-          <button
-            type="button"
-            aria-label="More info"
-            className={`${styles.roundBtn} ${styles.moreBtn}`}
-          >
-            <IoIosArrowDown />
-          </button>
+    <div
+      className={slotClasses}
+      onMouseEnter={onHoverStart}
+      onMouseLeave={onHoverEnd}
+    >
+      <div className={styles.card}>
+        <div className={styles.posterWrap}>
+          <img
+            className={styles.poster}
+            src={movie?.poster_path}
+            alt={movie?.title}
+            draggable={false}
+          />
+          {movie?.badge && <span className={styles.badge}>{movie.badge}</span>}
         </div>
 
-        <p className={styles.title}>{movie?.title}</p>
+        <div className={styles.info}>
+          <div className={styles.buttonsRow}>
+            <button
+              type="button"
+              aria-label="Play"
+              className={`${styles.roundBtn} ${styles.playBtn}`}
+            >
+              <BsPlayFill />
+            </button>
+            <button type="button" aria-label="Add to My List" className={styles.roundBtn}>
+              <BsPlusLg />
+            </button>
+            <button type="button" aria-label="Like" className={styles.roundBtn}>
+              <IoIosThumbsUp />
+            </button>
+            <button
+              type="button"
+              aria-label="More info"
+              className={`${styles.roundBtn} ${styles.moreBtn}`}
+            >
+              <IoIosArrowDown />
+            </button>
+          </div>
 
-        <div className={styles.metaRow}>
-          <span className={styles.match}>97% Match</span>
-          <span className={styles.tag}>{movie?.matureRating}</span>
-          <span className={styles.tag}>{movie?.quality}</span>
-        </div>
+          <p className={styles.title}>{movie?.title}</p>
 
-        <div className={styles.genres}>
-          {genres.map((genre, index) => (
-            <span key={index}>
-              {genre}
-              {index < genres.length - 1 && <span className={styles.dot}>•</span>}
-            </span>
-          ))}
+          <div className={styles.metaRow}>
+            <span className={styles.match}>97% Match</span>
+            <span className={styles.tag}>{movie?.matureRating}</span>
+            <span className={styles.tag}>{movie?.quality}</span>
+          </div>
+
+          <div className={styles.genres}>
+            {genres.map((genre, genreIndex) => (
+              <span key={genreIndex}>
+                {genre}
+                {genreIndex < genres.length - 1 && <span className={styles.dot}>•</span>}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
