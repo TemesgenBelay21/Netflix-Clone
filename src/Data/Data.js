@@ -169,39 +169,54 @@ const allMovies = [
   },
 ]
 
-export const trendingNow = allMovies
+/**
+ * Repeats a list until it reaches the given size so rows
+ * have enough titles for the slider to scroll.
+ * @param {Movie[]} list
+ * @param {number} size
+ * @returns {Movie[]}
+ */
+function pad(list, size) {
+  const out = [];
+  for (let i = 0; i < size; i++) {
+    out.push(list[i % list.length]);
+  }
+  return out;
+}
 
-export const actionAndAdventure = [
+export const trendingNow = pad(allMovies, 24)
+
+export const actionAndAdventure = pad([
   allMovies[0],
   allMovies[2],
   allMovies[4],
   allMovies[5],
   allMovies[8],
   allMovies[11],
-]
+], 20)
 
-export const newReleases = [
+export const newReleases = pad([
   allMovies[6],
   allMovies[7],
   allMovies[8],
   allMovies[9],
   allMovies[10],
   allMovies[12],
-]
+], 20)
 
-export const continueWatching = [
+export const continueWatching = pad([
   allMovies[1],
   allMovies[3],
   allMovies[13],
   allMovies[0],
   allMovies[5],
-]
+], 20)
 
-export const netflixOriginals = [
+export const netflixOriginals = pad([
   allMovies[0],
   allMovies[5],
   allMovies[6],
   allMovies[10],
   allMovies[11],
   allMovies[12],
-]
+], 20)
