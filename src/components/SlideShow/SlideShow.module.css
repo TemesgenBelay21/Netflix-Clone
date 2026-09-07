@@ -22,7 +22,7 @@
 .viewport {
   position: relative;
   overflow: hidden;
-  padding: 0 4% 190px;
+  padding: 0 4% 160px;
   touch-action: pan-y;
   user-select: none;
 }
