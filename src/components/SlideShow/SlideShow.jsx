@@ -4,7 +4,7 @@ import MovieCard from "../MovieCard/MovieCard";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const CARD_WIDTH = 190;
-const GAP = 4;
+const GAP = 6;
 const STEP = CARD_WIDTH + GAP;
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
