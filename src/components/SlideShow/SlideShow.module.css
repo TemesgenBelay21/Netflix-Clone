@@ -72,7 +72,7 @@
 .handle {
   position: absolute;
   top: 0;
-  height: 285px;
+  height: 169px;
   width: 56px;
   display: grid;
   place-items: center;
