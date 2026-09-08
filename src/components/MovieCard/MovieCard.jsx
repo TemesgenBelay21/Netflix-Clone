@@ -3,10 +3,10 @@ import { BsPlayFill, BsPlusLg } from "react-icons/bs";
 import { IoIosThumbsUp, IoIosArrowDown } from "react-icons/io";
 
 /**
- * A Netflix-style landscape card. Hovering scales the card up from
- * its own center and drops an info panel below with actions/metadata.
- * The card lives inside a fixed-size slot so neighbors can shift
- * out of the way on hover without resizing the row layout.
+ * A Netflix-style landscape card. Hovering scales the card up slightly
+ * from its top edge and drops an info panel below with actions/metadata.
+ * The card lives inside a fixed-size slot so the row layout doesn't
+ * reflow when a card scales up on hover.
  * @param {{
  *   movie: import("../../Data/Data.js").Movie,
  *   index?: number,
@@ -17,13 +17,9 @@ import { IoIosThumbsUp, IoIosArrowDown } from "react-icons/io";
  */
 function MovieCard({ movie, index = 0, hoveredIndex = null, onHoverStart, onHoverEnd }) {
   const genres = movie?.genres || [];
-  const shiftLeft = index === hoveredIndex - 1;
-  const shiftRight = index === hoveredIndex + 1;
   const slotClasses = [
     styles.cardSlot,
     hoveredIndex === index ? styles.cardSlotHovered : "",
-    shiftLeft ? styles.slotShiftLeft : "",
-    shiftRight ? styles.slotShiftRight : "",
   ]
     .join(" ")
     .trim();
