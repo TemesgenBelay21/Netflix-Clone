@@ -1,0 +1,81 @@
+.footer {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+  padding: 80px 0 30px;
+  padding-left: 4%;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Social media icons row */
+.socials {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.socialLink {
+  color: #808080;
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: #e5e5e5;
+}
+
+/* Two-column link layout */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columnLink {
+  margin-bottom: 14px;
+}
+
+.columnLink a {
+  color: #808080;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.columnLink a:hover {
+  color: #e5e5e5;
+  text-decoration: underline;
+}
+
+/* Boxed service code button */
+.serviceCode {
+  margin-top: 24px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid #808080;
+  color: #808080;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.serviceCode:hover {
+  color: #e5e5e5;
+  border-color: #e5e5e5;
+}
+
+/* Copyright line below */
+.copyright {
+  margin-top: 24px;
+  color: #808080;
+  font-size: 11px;
+}

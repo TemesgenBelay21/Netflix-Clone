@@ -1,6 +1,7 @@
 import Header from "./components/header/Header";
 import Banner from "./components/Banner/Banner";
 import DisplayRow from "./components/DisplayRow/DisplayRow";
+import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import {
   trendingNow,
@@ -19,6 +20,7 @@ function Home() {
       <DisplayRow title="New Releases" movies={newReleases} />
       <DisplayRow title="Continue Watching" movies={continueWatching} />
       <DisplayRow title="Netflix Originals" movies={netflixOriginals} />
+      <Footer />
     </>
   );
 }
